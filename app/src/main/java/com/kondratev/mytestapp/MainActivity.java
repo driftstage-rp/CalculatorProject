@@ -37,8 +37,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     @Override
     public void onClick(View v){
         // TODO Auto-generated method stub
-        float num1 = 0;  // регистр в имени переменных важен!
-        float num2 = 0;
+        float operand1 = 0;  // регистр в имени переменных важен!
+        float operand2 = 0;
         float result = 0;
         // Проверяем поля на пустоту
         if (TextUtils.isEmpty(etNum1.getText().toString())
@@ -52,7 +52,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         // читаем EditText и заполняем переменные числами
         try {
-            num1 = Float.parseFloat(etNum1.getText().toString());
+            operand1 = Float.parseFloat(etNum1.getText().toString());
         } catch(NumberFormatException e) {
             if(toastError!=null) //Отлавливаем множественные клики на кнопку останавливаем сообщение,
                 toastError.cancel();    //вызванное предыдущим кликом по кнопке, если оно в текущий момент отображается на экране
@@ -61,7 +61,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             return;
         }
         try {
-            num2 = Float.parseFloat(etNum2.getText().toString());
+            operand2 = Float.parseFloat(etNum2.getText().toString());
         }
         catch(NumberFormatException e) {
             if(toastError!=null) //Отлавливаем множественные клики на кнопку останавливаем сообщение,
@@ -83,17 +83,17 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         try {
             switch (task) {
                 case "+":
-                    result = num1 + num2;
+                    result = operand1 + operand2;
                     break;
                 case "-":
-                    result = num1 - num2;
+                    result = operand1 - operand2;
                     break;
                 case "*":
-                    result = num1 * num2;
+                    result = operand1 * operand2;
                     break;
                 case "/":
-                    if(num2 == 0) throw new ArithmeticException();
-                    result = num1 / num2;
+                    if(operand2 == 0) throw new ArithmeticException();
+                    result = operand1 / operand2;
                     break;
                 default:
                     flag=false;
@@ -108,7 +108,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         }
         if(flag) {
             // формируем строку вывода
-            tvResultText.setText(num1 + " " + task + " " + num2 + " = " + result);
+            tvResultText.setText(operand1 + " " + task + " " + operand2 + " = " + result);
         }
         else {
             if(toastError!=null) //Отлавливаем множественные клики на кнопку останавливаем сообщение,
