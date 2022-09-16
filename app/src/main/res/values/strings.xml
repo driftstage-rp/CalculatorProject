@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Caclulator Project</string>
+    <string name="num_1">1st operand</string>
+    <string name="num_2">2nd operand</string>
+    <string name="operation">Operation</string>
+    <string name="result">Result</string>
+    <string name="calculate">Calculate</string>
+</resources>

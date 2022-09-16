@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Проект калькулятор</string>
+    <string name="num_1">Операнд 1</string>
+    <string name="num_2">Операнд 2</string>
+    <string name="operation">Операция</string>
+    <string name="result">Результат</string>
+    <string name="calculate">Посчитать</string>
+</resources>
